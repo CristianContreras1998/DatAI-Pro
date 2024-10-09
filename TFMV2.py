@@ -153,11 +153,12 @@ if prompt := st.chat_input("Escribe tu pregunta..."):
     # Consultar el modelo LLM con la pregunta del usuario
     def consulta_llm(pregunta):
         try:
-            respuesta = openai.Completion.create(
-                model="gpt-4o",
-                prompt=pregunta,
+            respuesta = await openai.ChatCompletion.acreate(
+                model="gpt-4",
+                messages=[{"role": "system", "content": "You are a helpful assistant."}, 
+                          {"role": "user", "content": pregunta}],
                 max_tokens=150
-            )
+)
             return respuesta.choices[0].message['content'].strip()
         except Exception as e:
             return f"Error al consultar el LLM: {e}"
