@@ -155,9 +155,7 @@ if prompt := st.chat_input("Escribe tu pregunta..."):
         try:
             respuesta = openai.Completion.create(
                 model="gpt-4o",
-                messages=[
-                    {"role": "system", "content": "You are a helpful assistant."},
-                    {"role": "user", "content": pregunta}],
+                prompt=pregunta,
                 max_tokens=150
             )
             return respuesta.choices[0].message['content'].strip()
