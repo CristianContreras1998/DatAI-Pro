@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Oct  8 20:25:05 2024
+
+@author: ccontrerasm
+"""
+
 import streamlit as st
 from dotenv import load_dotenv
 import os
@@ -34,12 +41,8 @@ if "data_loaded" not in st.session_state:
 if "charts" not in st.session_state:
     st.session_state.charts = []
 
-# Preprocesamiento de datos (solo se ejecuta la primera vez)
-    # Verificar si el archivo ya existe
-    output_file = './reduced_property_price_datav2.csv'
-
     # Leer el archivo CSV completo
-    df = pd.read_csv(output_file)
+    df = pd.read_csv('./reduced_property_price_datav2.csv')
 
     # Asegurarte de que la columna 'Date of Transfer' está en formato datetime
     df['Date of Transfer'] = pd.to_datetime(df['Date of Transfer'])
@@ -56,7 +59,7 @@ if "charts" not in st.session_state:
     print(missing_values)
 
     # Lista de columnas que deseas eliminar
-    columns_to_drop = ['Transaction unique identifier', 'PAON', 'SAON', 'Street', 'Locality', 'Town/City', 'District', 'Date of Transfer', 'Record Status - monthly file only']
+    columns_to_drop = ['Transaction_unique_identifier', 'PAON', 'SAON', 'Street', 'Locality', 'Town/City', 'District', 'Date of Transfer', 'Record_Status']
 
     # Filtrar las columnas que existen en el dataframe
     columns_to_drop_existing = [col for col in columns_to_drop if col in df.columns]
@@ -123,12 +126,10 @@ if prompt := st.chat_input("Escribe tu pregunta..."):
         try:
             respuesta = openai.ChatCompletion.create(
                 model="gpt-4",
-                messages=[
-                    {"role": "system", "content": "You are a helpful assistant."},
-                    {"role": "user", "content": pregunta}],
+                messages=[{"role": "user", "content": pregunta}],
                 max_tokens=150
             )
-            return respuesta['choices'][0]['message']['content'].strip()
+            return respuesta.choices[0].message['content'].strip()
         except Exception as e:
             return f"Error al consultar el LLM: {e}"
 
@@ -202,10 +203,10 @@ if prompt := st.chat_input("Escribe tu pregunta..."):
         # Crear el gráfico de caja con Plotly Express sin puntos individuales
         fig = px.box(
             df,
-            x='Property Type',
+            x='Property_Type',
             y='Price',
             title='Distribución de Precios según el Tipo de Propiedad',
-            labels={'Property Type': 'Tipo de Propiedad', 'Price': 'Precio (€)'},  # Etiquetas más claras
+            labels={'Property_Type': 'Tipo de Propiedad', 'Price': 'Precio (€)'},  # Etiquetas más claras
             template="plotly_white"
         )
 
