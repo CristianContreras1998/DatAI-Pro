@@ -6,4 +6,3 @@ tqdm
 plotly
 python-dotenv
 requests
-asyncio
