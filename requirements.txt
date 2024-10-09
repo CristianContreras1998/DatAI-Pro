@@ -1,0 +1,8 @@
+streamlit
+pandas
+openai
+dask[dataframe]
+tqdm
+plotly
+python-dotenv
+requests
