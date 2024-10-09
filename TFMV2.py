@@ -1,3 +1,4 @@
+import asyncio
 import streamlit as st
 from dotenv import load_dotenv
 import os
@@ -151,7 +152,7 @@ if prompt := st.chat_input("Escribe tu pregunta..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     # Consultar el modelo LLM con la pregunta del usuario
-    def consulta_llm(pregunta):
+    async def consulta_llm(pregunta):
         try:
             respuesta = await openai.ChatCompletion.acreate(
                 model="gpt-4",
@@ -164,7 +165,7 @@ if prompt := st.chat_input("Escribe tu pregunta..."):
             return f"Error al consultar el LLM: {e}"
 
     # Obtener la respuesta del modelo LLM
-    respuesta = consulta_llm(prompt)
+    respuesta = asyncio.run(consulta_llm(prompt))
 
     # Mostrar la respuesta del asistente solo si no se va a graficar
     if not re.search(r"evolución|precio|gráfico|tendencia|distribución|tipo de propiedad|variación|segmentación", respuesta, re.IGNORECASE):
