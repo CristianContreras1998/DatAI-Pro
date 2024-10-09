@@ -1,7 +1,7 @@
 import streamlit as st
 from dotenv import load_dotenv
 import os
-import openai # type: ignore
+import openai
 import plotly.graph_objects as go
 import plotly.express as px
 import re
@@ -37,38 +37,6 @@ if "charts" not in st.session_state:
 # Preprocesamiento de datos (solo se ejecuta la primera vez)
     # Verificar si el archivo ya existe
     output_file = './reduced_property_price_datav2.csv'
-
-    if not os.path.exists(output_file):
-        print("El archivo no existe. Se procederá a realizar el muestreo estratificado y guardarlo.")
-
-        # Ver cuántos chunks se procesarán
-        num_chunks = df_dask.npartitions
-        print(f"El archivo se dividirá en {num_chunks} chunks.")
-
-        # Escribir el encabezado solo la primera vez
-        df_dask.head(0).to_csv(output_file, mode='w', header=True, index=False)
-
-        # Función para muestreo estratificado
-        def stratified_sample(df, frac=40000/28276228):
-            return df.groupby(categorical_columns, observed=True, group_keys=False).apply(lambda x: x.sample(frac=frac), meta=df)
-
-        # Procesar cada chunk de datos, aplicar muestreo y guardar incrementalmente
-        for i, chunk in enumerate(df_dask.to_delayed()):
-            print(f"Procesando chunk {i+1} de {num_chunks}...")
-            chunk_df = dd.from_delayed([chunk])  # Convertir cada chunk en un dataframe
-            chunk_sampled = stratified_sample(chunk_df)  # Aplicar muestreo estratificado
-
-            # Guardar el chunk muestreado en el archivo CSV (añadir al archivo)
-            chunk_sampled.compute().to_csv(output_file, mode='a', header=False, index=False)  # Añadir al archivo existente
-
-        print("Proceso completado, archivo CSV guardado.")
-    else:
-        print(f"El archivo '{output_file}' ya existe. Se procederá a leer el archivo.")
-
-        # Leer el archivo existente
-        df_sampled = pd.read_csv(output_file)
-
-        print(f"El archivo ya existe y ha sido leído correctamente con {len(df_sampled)} filas.")
 
     # Leer el archivo CSV completo
     df = pd.read_csv(output_file)
@@ -160,7 +128,7 @@ if prompt := st.chat_input("Escribe tu pregunta..."):
                     {"role": "user", "content": pregunta}],
                 max_tokens=150
             )
-            return respuesta.choices[0].message['content'].strip()
+            return respuesta['choices'][0]['message']['content'].strip()
         except Exception as e:
             return f"Error al consultar el LLM: {e}"
 
