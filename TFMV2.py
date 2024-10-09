@@ -154,7 +154,7 @@ if prompt := st.chat_input("Escribe tu pregunta..."):
     def consulta_llm(pregunta):
         try:
             respuesta = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
+                model="gpt-4",
                 messages=[
                     {"role": "system", "content": "You are a helpful assistant."},
                     {"role": "user", "content": pregunta}],
