@@ -12,3 +12,4 @@ catboost
 folium
 streamlit-folium
 python-dotenv
+category_encoders
