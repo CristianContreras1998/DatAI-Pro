@@ -12,3 +12,4 @@ openai
 python-dotenv
 category_encoders
 folium
+streamlit-folium
