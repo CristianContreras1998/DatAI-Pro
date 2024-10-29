@@ -1,8 +1,8 @@
-streamlit==1.39.0
-numpy==1.21.6
-catboost==1.0.3
-scipy==1.7.3
-setuptools==58.0.0
+streamlit
+numpy
+catboost
+scipy
+setuptools
 pandas
 matplotlib
 seaborn
