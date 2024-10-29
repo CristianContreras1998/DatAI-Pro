@@ -8,7 +8,7 @@ openai
 scikit-learn
 xgboost
 lightgbm
-catboost
+catboost==1.0.4  # o intenta con otra versión si esta sigue generando problemas
 folium
 streamlit-folium
 python-dotenv
