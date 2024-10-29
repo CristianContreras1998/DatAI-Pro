@@ -3,11 +3,8 @@ import streamlit as st
 from function_description import function_descriptions
 
 # Cargar la clave de API desde los secrets de Streamlit
-try:
-    API_KEY = st.secrets["OPENAI_API_KEY"]
-    openai.api_key = API_KEY
-except KeyError:
-    st.error("La clave de API de OpenAI no se ha encontrado en los Secrets de Streamlit.")
+API_KEY = st.secrets["OPENAI_API_KEY"]
+openai.api_key = API_KEY
 
 def identificar_funcion_avanzada(pregunta_usuario):
     opciones = list(function_descriptions.keys())
