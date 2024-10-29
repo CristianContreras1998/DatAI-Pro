@@ -11,3 +11,4 @@ lightgbm
 catboost
 folium
 streamlit-folium
+python-dotenv
