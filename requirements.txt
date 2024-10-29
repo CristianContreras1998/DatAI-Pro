@@ -1,6 +1,4 @@
 streamlit
-numpy
-catboost
 scipy
 setuptools
 pandas
@@ -15,3 +13,5 @@ folium
 streamlit-folium
 xgboost
 lightgbm
+catboost==1.2.5
+numpy==1.21.6
