@@ -2,11 +2,8 @@ import openai
 import streamlit as st
 from function_description import function_descriptions
 
-import openai
-import streamlit as st
-
 # Cargar la clave de API desde los secretos de Streamlit
-API_KEY = st.secrets["OPENAI_API_KEY"]
+API_KEY = st.secrets["API_KEY"]
 
 # Configurar la clave de API para OpenAI
 openai.api_key = API_KEY
