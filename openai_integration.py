@@ -3,7 +3,7 @@ import streamlit as st
 from function_description import function_descriptions
 
 # Cargar la clave de API desde los secretos de Streamlit
-API_KEY = st.secrets["OPENAI_API_KEY"]
+API_KEY = st.secrets["api_key"]
 
 # Verificar que la clave se ha cargado correctamente (opcional)
 if API_KEY:
