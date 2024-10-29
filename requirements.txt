@@ -1,14 +1,14 @@
 streamlit
 matplotlib
 pandas
-numpy==1.21.6  # Cambia a 1.21.6 u otra versión que sea compatible
+numpy
 seaborn
 plotly
 openai
 scikit-learn
 xgboost
 lightgbm
-catboost==1.0.4  # Puedes probar esta versión o ajustarla según compatibilidad
+catboost
 folium
 streamlit-folium
 python-dotenv
