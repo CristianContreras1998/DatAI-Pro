@@ -1,6 +1,7 @@
 streamlit
 matplotlib
-pandas
+numpy==1.23.5
+catboost==1.1.1
 numpy
 seaborn
 plotly
@@ -8,7 +9,6 @@ openai
 scikit-learn
 xgboost
 lightgbm
-catboost
 folium
 streamlit-folium
 python-dotenv
