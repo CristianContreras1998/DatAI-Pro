@@ -1,17 +1,9 @@
-import os
-from dotenv import load_dotenv
 import openai
+import streamlit as st
 from function_description import function_descriptions
 
-# Cargar la clave de API
-load_dotenv("apikey.env")
-API_KEY = os.environ.get("OPENAI_API_KEY")
-
-# Depuración: Verificar si la clave se cargó correctamente
-if API_KEY is None:
-    print("Error: No se encontró la clave de API.")
-else:
-    print("Clave de API cargada:", API_KEY)
+# Cargar la clave de API desde los secretos de Streamlit
+API_KEY = st.secrets["OPENAI_API_KEY"]
 
 # Configurar la clave de API directamente en openai
 openai.api_key = API_KEY
