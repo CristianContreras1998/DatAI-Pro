@@ -17,23 +17,39 @@ Sigue estos pasos para clonar el repositorio, configurar el entorno y ejecutar l
 
 ---
 
-#### 1️⃣ Clonar el repositorio
+#### 1️⃣ Obtener el repositorio
 
-Primero, debes clonar este repositorio en tu máquina local. Para hacerlo:
+Tienes dos opciones para obtener el repositorio:
 
-- Abre la terminal o línea de comandos.
-- Ejecuta el siguiente comando:
+- **Opción 1: Clonar el repositorio**  
+  Primero, debes clonar el repositorio en tu máquina local. Para hacerlo:
 
-```bash
-git clone https://github.com/CristianContreras1998/DatAI-Pro.git
-```
+  - Abre la terminal o línea de comandos.
+  - Ejecuta el siguiente comando:
 
-- Cambia al directorio del proyecto:
+    ```bash
+    git clone https://github.com/CristianContreras1998/DatAI-Pro.git
+    ```
 
-```bash
-cd DatAI-Pro
-```
-Esto descargará todos los archivos necesarios para la aplicación en tu computadora.
+  - Cambia al directorio del proyecto:
+
+    ```bash
+    cd DatAI-Pro
+    ```
+
+  Esto descargará todos los archivos necesarios para la aplicación en tu computadora.
+
+- **Opción 2: Descargar el repositorio**  
+  Alternativamente, puedes descargar el repositorio completo desde GitHub como archivo `.zip`:
+
+  - Ve a [GitHub - DatAI-Pro](https://github.com/CristianContreras1998/DatAI-Pro).
+  - Haz clic en **Code** y selecciona **Download ZIP**.
+  - Extrae el archivo `.zip` descargado en tu computadora.
+  - Luego, navega al directorio extraído usando la terminal:
+
+    ```bash
+    cd DatAI-Pro
+    ```
 
 ---
 
