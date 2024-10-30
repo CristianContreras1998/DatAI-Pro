@@ -55,18 +55,18 @@ Tienes dos opciones para obtener el repositorio:
 
 #### 2️⃣ Instalar las dependencias
 
-Una vez que hayas clonado el repositorio, debes instalar las dependencias necesarias. Estas dependencias están listadas en el archivo requirements.txt.
+Una vez que hayas clonado o descargado el repositorio, debes instalar las dependencias necesarias. Estas dependencias están listadas en el archivo `requirements.txt`.
 
 Para instalarlas:
 
 - Asegúrate de estar en el directorio del proyecto (DatAI-Pro).
 - Ejecuta el siguiente comando en la terminal:
 
-```bash
-pip install -r requirements.txt
-```
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Esto instalará todas las bibliotecas que la aplicación necesita para funcionar, como Streamlit, OpenAI, y otras librerías de Python.
+Esto instalará todas las bibliotecas que la aplicación necesita para funcionar, como **Streamlit**, **OpenAI**, y otras librerías de Python.
 
 ---
 
