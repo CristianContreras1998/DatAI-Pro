@@ -35,6 +35,8 @@ cd DatAI-Pro
 ```
 Esto descargará todos los archivos necesarios para la aplicación en tu computadora.
 
+---
+
 #### 2️⃣ Instalar las dependencias
 
 Una vez que hayas clonado el repositorio, debes instalar las dependencias necesarias. Estas dependencias están listadas en el archivo requirements.txt.
@@ -50,6 +52,8 @@ pip install -r requirements.txt
 
 Esto instalará todas las bibliotecas que la aplicación necesita para funcionar, como Streamlit, OpenAI, y otras librerías de Python.
 
+---
+
 #### 3️⃣ Configurar la clave de API de OpenAI
 
 Para que la aplicación funcione correctamente, necesita autenticarse con la API de OpenAI.
@@ -60,6 +64,8 @@ Para que la aplicación funcione correctamente, necesita autenticarse con la API
 - **Ubicación:** Coloca el archivo `.env` en la carpeta principal del proyecto (DatAI-Pro). Asegúrate de que esté en el mismo directorio donde se encuentra main.py. Esto permitirá que la aplicación acceda a la clave de API sin necesidad de configuración adicional.
 
 ⚠️ **Nota importante:** Este archivo `.env` contiene la clave de API de OpenAI, que es confidencial. Por favor, evita compartirlo o subirlo a repositorios públicos.
+
+---
 
 #### 4️⃣ Ejecutar la aplicación
 
@@ -77,6 +83,8 @@ La aplicación se abrirá automáticamente en tu navegador predeterminado. Si no
 ```bash
 http://localhost:8501
 ```
+
+---
 
 #### 5️⃣ Interactuar con la aplicación
 
@@ -98,6 +106,8 @@ Para aplicar modelos de Machine Learning, actualmente están activos:
 - XGBoost
 - LightGBM
 - CatBoost
+
+---
 
 #### ℹ️ Notas adicionales
 
