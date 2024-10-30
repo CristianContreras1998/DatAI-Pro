@@ -116,6 +116,8 @@ Para aplicar modelos de Machine Learning, actualmente están activos:
 
 Esta guía proporciona todos los detalles para que puedas configurar y ejecutar la aplicación sin problemas. Si necesitas más ayuda, no dudes en pedírmela.
 
+---
+
 @Cristian Contreras
 
 ✉️ contrerasmarquezcristian@gmail.com
